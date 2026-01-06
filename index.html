@@ -118,7 +118,7 @@
                     <div class="contact-icon">✉️</div>
                     <div>
                         <h4>Email</h4>
-                        <p>info@zavanetwork.com</p>
+                        <p>deusmweteise@gmail.com</p>
                     </div>
                 </div>
                 <div class="contact-item">
@@ -129,25 +129,49 @@
                     </div>
                 </div>
             </div>
-            <form class="contact-form" id="contactForm">
-                <div class="form-group">
-                    <label for="name">Full Name</label>
-                    <input type="text" id="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="phone">Phone Number</label>
-                    <input type="tel" id="phone">
-                </div>
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" required></textarea>
-                </div>
-                <button type="submit" class="submit-btn">Send Message</button>
-            </form>
+
+            <!-- SUCCESS/ERROR MESSAGE DISPLAY -->
+            <div>
+                <div id="formMessage" class="form-message"></div>
+
+                <!-- UPDATED CONTACT FORM WITH WEB3FORMS -->
+                <form action="https://api.web3forms.com/submit" method="POST" class="contact-form" id="contactForm">
+                    
+                    <!-- REPLACE THIS WITH YOUR WEB3FORMS ACCESS KEY -->
+                    <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+                    
+                    <!-- Optional: Custom subject for email -->
+                    <input type="hidden" name="subject" value="New Contact from Zava Website">
+                    
+                    <!-- Optional: From name -->
+                    <input type="hidden" name="from_name" value="Zava Website Contact Form">
+                    
+                    <!-- Anti-spam honeypot -->
+                    <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+                    
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn" id="submitBtn">Send Message</button>
+                </form>
+            </div>
         </div>
     </section>
 
@@ -155,7 +179,3 @@
         <p>&copy; 2024 Zava Network Technologies. All rights reserved.</p>
         <p>Nakasero, Kampala | +256 757 287 544</p>
     </footer>
-
-    <script src="script.js"></script>
-</body>
-</html>
